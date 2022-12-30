@@ -1,9 +1,9 @@
 close all;
 %% SIMO (Single Input Multiple Output) 
 % Constants
-N_bits = 2336; %corsponds to 1022 symbols
+N_bits = 3504; %corsponds to 1022 symbols
 L = 50;
-M = 16;
+M = 64;
 fft_size = 1024;
 frames_num = 5;
 ofdm_synbols_per_frame = 5;
