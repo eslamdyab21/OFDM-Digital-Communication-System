@@ -12,7 +12,7 @@ frames_num = 5;
 ofdm_synbols_per_frame = 5;
 channel_type = "Multipath";
 
-Eb_No = 0:3:40;
+Eb_No = -20:3:20;
 Eb = 2*(M-1)/(3*log2(M));
 No_vect = Eb./(10.^(Eb_No/10));
 Pe_vect = zeros(1,length(Eb_No));
@@ -65,12 +65,11 @@ for i = 1:length(Eb_No)
 end
 %% plot
 figure
-plot(Eb_No,10.*log10(Pe_vect));
+semilogy(Eb_No,Pe_vect);
 title('BER vs Eb/No ' + channel_type + ' for ' + M + ' QAM');
 
 xlabel('Eb/No (dB)');
 ylabel('BER (dB)');
-xlim([0 40]);
 
      
 
