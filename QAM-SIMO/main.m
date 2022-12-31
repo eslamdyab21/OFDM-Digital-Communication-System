@@ -5,15 +5,15 @@ close all;
 % For M = 64 ---> N_bits = 3504 
 % For M = 16 ---> N_bits = 2336 
 %-------------------------------
-N_bits = 3504; 
-M = 64;
+N_bits = 2336; 
+M = 16;
 fft_size = 1024;
-frames_num = 5;
-ofdm_synbols_per_frame = 5;
+frames_num = 25;
+ofdm_synbols_per_frame = 25;
 channel_type = "Multipath";
 
 Eb_No = -20:3:20;
-Eb = 2*(M-1)/(3*log2(M));
+Eb = 2*(M-1)/(3*log2(M)); 
 No_vect = Eb./(10.^(Eb_No/10));
 Pe_vect = zeros(1,length(Eb_No));
 
@@ -58,8 +58,8 @@ for i = 1:length(Eb_No)
   Pe_vect(i) = Pe_avg_frames_per_frame;
 
   % Plot the constellation diagram for each SNR 
-  scatterplot(x_before_demodulation);
-  title('Constellation Diagram'); 
+%   scatterplot(x_before_demodulation);
+%   title('Constellation Diagram'); 
 
 
 end
