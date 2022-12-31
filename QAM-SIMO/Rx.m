@@ -18,5 +18,5 @@ function [x_Rx, x_time_domain] = Rx(M, L, y_Tx1, y_Tx2, x_QAM_modulated, h1, h2,
     x_demod = QAM_demodulation(x_time_domain(1:modulation_length),M);
 
     % Channel Decoding
-    x_Rx = channel_decoding(x_demod);
+    x_Rx = Channeldecoding(x_demod);
     
